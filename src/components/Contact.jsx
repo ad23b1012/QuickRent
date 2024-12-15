@@ -32,10 +32,12 @@ const Contact = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-cyan-400 text-black py-3 rounded hover:bg-cyan-500 transition"
+          className="w-full bg-cyan-400 text-black py-3 rounded-[10px] hover:bg-cyan-500 transition"
         >
           Send Message
         </button>
+
+
       </form>
     </section>
   );

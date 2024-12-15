@@ -6,7 +6,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
- 
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -15,6 +15,7 @@ const Login = () => {
 
     if (user) {
       localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userName", user.name);
       navigate("/dashboard");
     } else {
       setError("Invalid email or password!");
@@ -25,7 +26,7 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
         <h1 className="text-3xl font-bold text-center text-cyan-400 mb-6">
-          Login to <span className="text-white">QuickRent</span>
+          Sign In to <span className="text-white">QuickRent</span>
         </h1>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
@@ -59,7 +60,7 @@ const Login = () => {
             type="submit"
             className="w-full px-4 py-2 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-500 hover:shadow-cyan-400/50 transition"
           >
-            Login
+            Log In
           </button>
         </form>
         <p className="text-center text-gray-400 text-sm mt-6">

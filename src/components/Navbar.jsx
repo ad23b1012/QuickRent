@@ -8,17 +8,18 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userName");
     navigate("/");
   };
 
   const handleLogoClick = () => {
-    if (window.scrollToTop) {
-      window.scrollToTop();
-    }
+    navigate("/");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <nav className="backdrop-blur-lg bg-opacity-20 bg-black fixed top-0 w-full p-4 flex justify-between items-center shadow-lg z-50">
+      {/* Logo */}
       <h1
         onClick={handleLogoClick}
         className="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-400 cursor-pointer"
@@ -26,6 +27,7 @@ const Navbar = () => {
         QuickRent
       </h1>
 
+      {/* Desktop Navbar Links */}
       <ul className="hidden md:flex space-x-6 text-white text-sm sm:text-base md:text-lg lg:text-xl">
         <li>
           <Link

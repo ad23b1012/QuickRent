@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { gadgets } from "../assets/assets";
 
 const Hero = () => {
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const name = localStorage.getItem("userName") || "Guest";
+    setUserName(name);
+  }, []);
+
   return (
     <section className="h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
       <div className="flex flex-col justify-center items-center text-center h-full z-10 relative">
         <h1 className="text-6xl font-bold text-white mb-4">
-          Welcome to <span className="text-cyan-400">QuickRent</span>
+          Welcome to <span className="text-cyan-400">QuickRent</span>,{" "}
+          <span className="bg-gradient-to-r from-white via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
+            {userName}
+          </span>
+          !
         </h1>
         <p className="text-gray-400 text-xl mb-8">
           Future-ready gadget rentals at your fingertips.
