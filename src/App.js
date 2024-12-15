@@ -9,7 +9,7 @@ import Rentals from "./pages/Rentals";
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* Ensure it scrolls to the top on every route change */}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -4,11 +4,9 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-8 mt-8">
       <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-20 space-y-8 md:space-y-0">
-        {/* Left: Office Details */}
         <div className="flex flex-col justify-center space-y-4 w-full md:w-1/2">
           <h3 className="text-2xl font-bold text-cyan-400 mb-4">Our Office Location</h3>
           
-          {/* Office contact details */}
           <div className="text-gray-400">
             <p className="mb-2"><strong>Email:</strong> buddigaabhishek@gmail.com</p>
             <p className="mb-2"><strong>Phone:</strong> +91 9032097396</p>
@@ -17,7 +15,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right: Google Map */}
         <div className="w-full md:w-1/2">
           <div className="relative pb-[56.25%] md:pb-[45%] h-0"> 
             <iframe

@@ -1,16 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";  // Importing useNavigate
-import { gadgets } from "../assets/assets.js";  // Import gadgets data from assets.js
+import { useNavigate } from "react-router-dom";
+import { gadgets } from "../assets/assets.js";
 
 const Gadgets = () => {
   const navigate = useNavigate();
 
-  // Function to navigate to Rentals page
   const handleSeeMore = () => {
-    navigate("/rentals");  // Redirect to the Rentals page
+    navigate("/rentals");
   };
 
-  // Slice the gadgets array to show only the first 4 items
   const displayedGadgets = gadgets.slice(0, 6);
 
   return (
@@ -24,11 +22,10 @@ const Gadgets = () => {
             key={gadget.id}
             className="bg-gradient-to-br from-gray-900 via-black to-gray-800 p-6 rounded-lg shadow-lg hover:shadow-cyan-400/50 text-center text-white transition"
           >
-            {/* Gadget Image */}
             <img
               src={gadget.image}
               alt={gadget.name}
-              className="w-full h-48 object-contain rounded-lg mb-4" // Image styling
+              className="w-full h-48 object-contain rounded-lg mb-4"
             />
             <h3 className="text-xl font-bold mb-2">{gadget.name}</h3>
             <p className="text-gray-400 mb-2">{gadget.features}</p>
@@ -40,10 +37,9 @@ const Gadgets = () => {
         ))}
       </div>
 
-      {/* "See More" button */}
       <div className="text-center mt-8">
         <button
-          onClick={handleSeeMore}  // Trigger the navigation
+          onClick={handleSeeMore}
           className="px-6 py-3 bg-cyan-400 text-black text-lg font-semibold rounded-full shadow-lg hover:shadow-cyan-400/50 hover:bg-cyan-500 transition"
         >
           See More

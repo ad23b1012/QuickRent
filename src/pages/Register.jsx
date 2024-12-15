@@ -26,7 +26,7 @@ const Register = () => {
 
     users.push({ email, password });
     localStorage.setItem("users", JSON.stringify(users));
-    navigate("/"); // Redirect to Login
+    navigate("/");
   };
 
   return (

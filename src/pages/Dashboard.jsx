@@ -14,7 +14,7 @@ const Dashboard = () => {
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (!isLoggedIn) {
-      navigate("/"); // Redirect to login if not logged in
+      navigate("/");
     }
   }, [navigate]);
 

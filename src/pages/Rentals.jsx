@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar"; // Import Navbar component
-
-import Footer from "../components/Footer"; // Import Footer component
-import ScrollToTop from "../components/ScrollToTop"; // Import ScrollToTop component
-import { gadgets } from "../assets/assets"; // Import gadgets data from assets.js
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
+import { gadgets } from "../assets/assets"; 
 
 const Rentals = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter gadgets based on selected category and search query
   const filteredGadgets = gadgets.filter((gadget) => {
     const matchesCategory = selectedCategory === "all" || gadget.category === selectedCategory;
     const matchesSearch =
@@ -20,19 +18,15 @@ const Rentals = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
-      {/* Add ScrollToTop to ensure the page scrolls to the top */}
       <ScrollToTop />
 
-      {/* Add Navbar */}
       <Navbar />
 
-      {/* Page Content with Padding to Avoid Overlap */}
-      <div className="pt-20 p-8"> {/* Added `pt-20` for spacing */}
+      <div className="pt-20 p-8">
         <h1 className="text-4xl font-bold text-cyan-400 text-center mb-8">
           Available Rentals
         </h1>
 
-        {/* Search Bar */}
         <div className="text-center mb-8">
           <input
             type="text"
@@ -43,7 +37,6 @@ const Rentals = () => {
           />
         </div>
 
-        {/* Category Filter */}
         <div className="mb-8 text-center">
           <label className="text-lg text-gray-400 mb-2">Filter by Category:</label>
           <select
@@ -73,7 +66,6 @@ const Rentals = () => {
           </select>
         </div>
 
-        {/* Gadgets Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-20">
           {filteredGadgets.map((gadget) => (
             <div
@@ -96,7 +88,6 @@ const Rentals = () => {
         </div>
       </div>
 
-      {/* Footer with Office Location */}
       <Footer />
     </div>
   );

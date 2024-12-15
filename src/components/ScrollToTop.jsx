@@ -9,15 +9,13 @@ const ScrollToTop = () => {
   }, [pathname]);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to the top
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" });};
 
-  // Attach the manual scrollToTop function globally to the window object
   useEffect(() => {
     window.scrollToTop = scrollToTop;
   }, []);
 
-  return null; // The component does not render anything visually
+  return null;
 };
 
 export default ScrollToTop;

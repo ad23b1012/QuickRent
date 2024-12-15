@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-scroll";
-import { gadgets } from "../assets/assets"; // Import gadgets data
+import { gadgets } from "../assets/assets";
 
 const Hero = () => {
   return (
     <section className="h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
-      {/* Hero Content */}
       <div className="flex flex-col justify-center items-center text-center h-full z-10 relative">
         <h1 className="text-6xl font-bold text-white mb-4">
           Welcome to <span className="text-cyan-400">QuickRent</span>
@@ -23,7 +22,6 @@ const Hero = () => {
         </Link>
       </div>
 
-      {/* Gadget Widgets */}
       {gadgets.slice(0, 9).map((gadget, index) => (
         <div
           key={gadget.id}
